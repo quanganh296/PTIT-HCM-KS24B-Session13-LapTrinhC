@@ -20,7 +20,33 @@ printf("Duong cheo phu: ");
         }
         printf("\n");
     }
+   void border(int arr[100][100], int n, int m) {
    
+    for (int j = 0; j < m; j++) {
+        printf("%d ", arr[0][j]);
+    }
+    printf("\n");
+
+    for (int i = 1; i < n - 1; i++) {
+        printf("%d ", arr[i][0]); 
+        for (int j = 1; j < m - 1; j++) {
+            printf("  ");
+        }
+        if (m > 1) {
+            printf("%d", arr[i][m - 1]);   
+        }
+        printf("\n");
+    }
+
+    if (n > 1) {
+        for (int j = 0; j < m; j++) {
+            printf("%d ", arr[n - 1][j]);
+        }
+        printf("\n");
+    }
+}
+   
+
 
 
 int main() {
@@ -87,7 +113,7 @@ int main() {
 
                 break;
             case 4:
-                  
+                   border(arr,n,m);
                 break;
             case 5:
                  if (n <= 0 || m <= 0 || n > 100 || m > 100||n!=m) {
